@@ -37,7 +37,7 @@ namespace Line
             ChartLine.Series.Clear();
             var seriaPoint = ChartLine.Series.Add("pointsLine");
             //Style
-            seriaPoint.ChartType = SeriesChartType.Column;
+            seriaPoint.ChartType = SeriesChartType.Line;
             seriaPoint.BorderWidth = 5;
             //Drawing
             var chartDataPoint = playerStatistics.GroupBy(ps => ps.Matchup.Starttime).ToDictionary(Key => Key.Key, value => value.Sum(v => v.Point));
