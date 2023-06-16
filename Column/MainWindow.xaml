@@ -6,10 +6,22 @@
         xmlns:local="clr-namespace:Column"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
-        Title="ColumnChart" MinHeight="450" MinWidth="800"
+        Title="ColumnChart"
+        MinHeight="450"
+        MinWidth="800"
         Icon="/resources/logoColumnDiagram.png">
     <Grid>
-        <lvc:CartesianChart Series="{Binding seriesCollection}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Select matchup"
+                       FontSize="18"
+                       Margin="0,0,10,0" />
+        </StackPanel>
+        <lvc:CartesianChart Series="{Binding seriesCollection}"
+                            Grid.Row="1">
             <lvc:CartesianChart.AxisX>
                 <lvc:Axis LabelsRotation="20"
                           Labels="{Binding Labels}"

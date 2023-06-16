@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LiveCharts.Definitions.Charts;
+using System.Globalization;
 
 namespace Column
 {
@@ -25,6 +26,8 @@ namespace Column
     {
         public List<string> Labels { get; set; }
         public SeriesCollection seriesCollection { get; set; }
+
+        Random rnd = new Random();
 
         public MainWindow()
         {
@@ -43,6 +46,7 @@ namespace Column
                 {
                     Values = value,
                     DataLabels = true,
+                    Fill = new SolidColorBrush(Color.FromRgb((byte)rnd.Next(0, 255), (byte)rnd.Next(0, 255), (byte)rnd.Next(0, 255)))
                 }
             };
             DataContext = this;

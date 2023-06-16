@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Line"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" MinHeight="450" MinWidth="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -22,7 +22,30 @@
                       Width="150"
                       FontSize="18"/>
         </StackPanel>
-        <lvc:CartesianChart x:Name="LineChart" 
-                            Grid.Row="1"/>
+        <lvc:CartesianChart Series="{Binding seriesCollection}"
+                            LegendLocation="Right"
+                            Grid.Row="1">
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis Title="Point"
+                          FontSize="18"
+                          Foreground="Black"
+                          LabelFormatter="{Binding Point}">
+                    <lvc:Axis.Separator>
+                        <lvc:Separator Step="10"></lvc:Separator>
+                    </lvc:Axis.Separator>
+                </lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Title="Date"
+                          LabelsRotation="20"
+                          FontSize="18"
+                          Foreground="Black"
+                          Labels="{Binding Labels}">
+                    <lvc:Axis.Separator>
+                        <lvc:Separator Step="1"></lvc:Separator>
+                    </lvc:Axis.Separator>
+                </lvc:Axis>
+            </lvc:CartesianChart.AxisX>
+        </lvc:CartesianChart>
     </Grid>
 </Window>
