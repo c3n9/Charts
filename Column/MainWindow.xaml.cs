@@ -7,12 +7,14 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Forms.DataVisualization.Charting;
+using LiveCharts;
+using LiveCharts.Wpf;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LiveCharts.Definitions.Charts;
 
 namespace Column
 {
@@ -24,21 +26,24 @@ namespace Column
         public MainWindow()
         {
             InitializeComponent();
-            var matchup = App.DB.Matchup.FirstOrDefault(x => x.MatchupId == 12);
-            var areaTeamScore = ChartColumn.ChartAreas.Add("TeamScoreArea");
+            var points = App.DB.PlayerStatistics.Where(ps => ps.MatchupId == 3).ToList();
+            var seriesCollection = new SeriesCollection();
+            foreach (var point in points)
+            {
+                var columnSeries = new ColumnSeries
+                {
+                    Title = point.Player.Name,
+                    LabelPoint = chartPoint => point.Player.Name,
+                    Values = new ChartValues<int>() { point.Point },
+                    DataLabels = true,
+                    ColumnPadding = 10,
+                    Width = 450,
+                };
+                seriesCollection.Add(columnSeries);
+            }
+            ChartColumn.Series = seriesCollection;
 
-            var seriaTeamAwayScore = ChartColumn.Series.Add("TeamAwayScoreSeria");
-            var seriaTeamHomeScore = ChartColumn.Series.Add("TeamHomeScoreSeria");
-
-            seriaTeamHomeScore.ChartType = SeriesChartType.Column;
-            seriaTeamAwayScore.ChartType = SeriesChartType.Column;
-
-            var chartDataAwayScore = matchup.MatchupDetail.GroupBy(md => md.Matchup.Team.TeamName).ToDictionary(Key => Key.Key, value => value.Sum(v => v.Team_Away_Score));
-            var chartDataHomeScore = matchup.MatchupDetail.GroupBy(md => md.Matchup.Team1.TeamName).ToDictionary(Key => Key.Key, value => value.Sum(v => v.Team_Home_Score));
-            seriaTeamAwayScore.Points.DataBindXY(chartDataAwayScore.Keys, chartDataAwayScore.Values);
-            seriaTeamHomeScore.Points.DataBindXY(chartDataHomeScore.Keys, chartDataHomeScore.Values);
 
         }
     }
 }
- 

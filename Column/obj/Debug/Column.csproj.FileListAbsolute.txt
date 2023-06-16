@@ -21,3 +21,10 @@ D:\Projects\Charts\Column\obj\Debug\Column.csproj.CoreCompileInputs.cache
 D:\Projects\Charts\Column\obj\Debug\Column.csproj.CopyComplete
 D:\Projects\Charts\Column\obj\Debug\Column.exe
 D:\Projects\Charts\Column\obj\Debug\Column.pdb
+D:\Projects\Charts\Column\bin\Debug\LiveCharts.dll
+D:\Projects\Charts\Column\bin\Debug\LiveCharts.Wpf.dll
+D:\Projects\Charts\Column\bin\Debug\LiveCharts.pdb
+D:\Projects\Charts\Column\bin\Debug\LiveCharts.xml
+D:\Projects\Charts\Column\bin\Debug\LiveCharts.Wpf.pdb
+D:\Projects\Charts\Column\bin\Debug\LiveCharts.Wpf.xml
+D:\Projects\Charts\Column\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
