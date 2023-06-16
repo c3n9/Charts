@@ -21,3 +21,16 @@ D:\Projects\Charts\Line\obj\Debug\Line.csproj.CoreCompileInputs.cache
 D:\Projects\Charts\Line\obj\Debug\Line.csproj.CopyComplete
 D:\Projects\Charts\Line\obj\Debug\Line.exe
 D:\Projects\Charts\Line\obj\Debug\Line.pdb
+D:\Projects\Charts\Line\bin\Debug\LiveCharts.dll
+D:\Projects\Charts\Line\bin\Debug\LiveCharts.Wpf.dll
+D:\Projects\Charts\Line\bin\Debug\LiveCharts.pdb
+D:\Projects\Charts\Line\bin\Debug\LiveCharts.xml
+D:\Projects\Charts\Line\bin\Debug\LiveCharts.Wpf.pdb
+D:\Projects\Charts\Line\bin\Debug\LiveCharts.Wpf.xml
+D:\Projects\Charts\Line\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+D:\Projects\Charts\Line\bin\Debug\OxyPlot.dll
+D:\Projects\Charts\Line\bin\Debug\OxyPlot.Wpf.dll
+D:\Projects\Charts\Line\bin\Debug\OxyPlot.Wpf.Shared.dll
+D:\Projects\Charts\Line\bin\Debug\OxyPlot.xml
+D:\Projects\Charts\Line\bin\Debug\OxyPlot.Wpf.xml
+D:\Projects\Charts\Line\bin\Debug\OxyPlot.Wpf.Shared.xml

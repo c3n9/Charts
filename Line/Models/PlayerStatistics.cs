@@ -40,5 +40,6 @@ namespace Line.Models
         public virtual Matchup Matchup1 { get; set; }
         public virtual Player Player { get; set; }
         public virtual Team Team { get; set; }
+        public int Date { get; internal set; }
     }
 }

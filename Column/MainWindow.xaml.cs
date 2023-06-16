@@ -23,27 +23,29 @@ namespace Column
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<string> Labels { get; set; }
+        public SeriesCollection seriesCollection { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
-            var points = App.DB.PlayerStatistics.Where(ps => ps.MatchupId == 3).ToList();
-            var seriesCollection = new SeriesCollection();
+            Labels = new List<string>();
+            var points = App.DB.PlayerStatistics.Where(ps => ps.MatchupId == 6).ToList();
+            var value = new ChartValues<int>();
             foreach (var point in points)
             {
-                var columnSeries = new ColumnSeries
-                {
-                    Title = point.Player.Name,
-                    LabelPoint = chartPoint => point.Player.Name,
-                    Values = new ChartValues<int>() { point.Point },
-                    DataLabels = true,
-                    ColumnPadding = 10,
-                    Width = 450,
-                };
-                seriesCollection.Add(columnSeries);
+                value.Add(point.Point);
+                Labels.Add(point.Player.Name);
             }
-            ChartColumn.Series = seriesCollection;
-
-
+            seriesCollection = new SeriesCollection
+            {
+                new ColumnSeries
+                {
+                    Values = value,
+                    DataLabels = true,
+                }
+            };
+            DataContext = this;
         }
     }
 }

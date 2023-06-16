@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Line"
-        xmlns:winForms="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -22,8 +22,7 @@
                       Width="150"
                       FontSize="18"/>
         </StackPanel>
-        <WindowsFormsHost Grid.Row="1">
-            <winForms:Chart x:Name="ChartLine" />
-        </WindowsFormsHost>
+        <lvc:CartesianChart x:Name="LineChart" 
+                            Grid.Row="1"/>
     </Grid>
 </Window>
