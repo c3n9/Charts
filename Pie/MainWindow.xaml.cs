@@ -27,22 +27,17 @@ namespace Pie
         public MainWindow()
         {
             InitializeComponent();
-            var value = new ChartValues<decimal>();
-            var salary = App.DB.PlayerInTeam.Where(x=> x.SeasonId == 2 && x.TeamId == 5).Select(p => p.Salary).ToList();
-            foreach(var cost in salary)
+            var playersInTeam = App.DB.PlayerInTeam.Where(x => x.SeasonId == 2 && x.TeamId == 5).ToList();
+            seriesCollection = new SeriesCollection();
+            foreach (var playerInTeam in playersInTeam)
             {
-                value.Add(cost);
-            }
-            seriesCollection = new SeriesCollection
-            {
-                new PieSeries
+                seriesCollection.Add(new PieSeries
                 {
-                    Title = "Salary",
-                    Values = value,
+                    Values = new ChartValues<decimal> { playerInTeam.Salary },
+                    Title = $"{playerInTeam.Player.Name}: {playerInTeam.Salary}",
                     DataLabels = true,
-                    Fill = new SolidColorBrush(Color.FromArgb(100, (byte)rnd.Next(0, 255), (byte)rnd.Next(0, 255), (byte)rnd.Next(0, 255) ))
-                }
-            };
+                });
+            }
             DataContext = this;
         }
     }

@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <lvc:PieChart x:Name="PieChart"
-                      Series="{Binding seriesCollection}"/>
+        <lvc:PieChart x:Name="pieChart" 
+                      Series="{Binding seriesCollection}"
+                      LegendLocation="Bottom"/>
     </Grid>
 </Window>
