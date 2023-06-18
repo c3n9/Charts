@@ -8,3 +8,6 @@
 
 ## Pie chart
 ![image](https://github.com/c3n9/Charts/assets/108518693/5c4958a0-4e21-4c62-8c9a-db5668810657)
+
+## Row chart
+![image](https://github.com/c3n9/Charts/assets/108518693/c741e845-03c4-425d-b700-0498a5068cfb)
