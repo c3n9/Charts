@@ -1,4 +1,4 @@
-# Charts
+# Live charts
 
 ## Line chart
 ![image](https://github.com/c3n9/Charts/assets/108518693/3f8a582f-b8c8-48a7-8376-2e4ff8bd3148)
