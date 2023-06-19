@@ -29,6 +29,7 @@ namespace WinFormColumn
             var seriaPoint = ColumnChart.Series.Add("pointsColumn");
             seriaPoint.ChartType = SeriesChartType.Column;
             ColumnChart.ChartAreas["pointArea"].AxisX.LabelStyle.Angle = 45;
+            ColumnChart.ChartAreas[0].AxisX.Interval = 1;
             var chartDataPoint = points.ToDictionary(Key => Key.Player.Name, Value => Value.Point);
             seriaPoint.Points.DataBindXY(chartDataPoint.Keys, chartDataPoint.Values);
         }
