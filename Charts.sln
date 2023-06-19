@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Line", "Line\Line.csproj", "{0A2FD971-D78B-47FC-B6D4-28221DD2F952}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveLine", "Line\LiveLine.csproj", "{0A2FD971-D78B-47FC-B6D4-28221DD2F952}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Column", "Column\Column.csproj", "{6128A0CE-7459-4243-A073-69CB136C2291}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveColumn", "Column\LiveColumn.csproj", "{6128A0CE-7459-4243-A073-69CB136C2291}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pie", "Pie\Pie.csproj", "{C7B88B99-CD6E-4914-96B2-61C41E238CE1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivePie", "Pie\LivePie.csproj", "{C7B88B99-CD6E-4914-96B2-61C41E238CE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Row", "Row\Row.csproj", "{C89CF16F-50AD-49ED-A768-CC53698EC926}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveRow", "Row\LiveRow.csproj", "{C89CF16F-50AD-49ED-A768-CC53698EC926}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormLine", "WinFormLine\WinFormLine.csproj", "{7D55E029-C64B-4589-A43E-6E682966E526}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormColumn", "WinFormColumn\WinFormColumn.csproj", "{604A11DC-647A-435A-AB91-BC32F7843ACE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{C89CF16F-50AD-49ED-A768-CC53698EC926}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C89CF16F-50AD-49ED-A768-CC53698EC926}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C89CF16F-50AD-49ED-A768-CC53698EC926}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D55E029-C64B-4589-A43E-6E682966E526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D55E029-C64B-4589-A43E-6E682966E526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D55E029-C64B-4589-A43E-6E682966E526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D55E029-C64B-4589-A43E-6E682966E526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{604A11DC-647A-435A-AB91-BC32F7843ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{604A11DC-647A-435A-AB91-BC32F7843ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{604A11DC-647A-435A-AB91-BC32F7843ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{604A11DC-647A-435A-AB91-BC32F7843ACE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
