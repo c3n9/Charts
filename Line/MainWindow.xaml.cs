@@ -62,7 +62,7 @@ namespace Line
         private void CBPlayers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var player = CBPlayers.SelectedItem as Player;
-            playerStatistics = App.DB.PlayerStatistics.Where(ps => ps.Player.PlayerId == player.PlayerId).ToList();
+            playerStatistics = App.DB.PlayerStatistics.Where(ps => ps.Player.PlayerId == player.PlayerId).OrderBy(x => x.Matchup.Starttime).ToList();
             Refresh();
         }
     }
