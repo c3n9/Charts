@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WinFormRow.Models;
 
 namespace WinFormRow
 {
@@ -13,5 +14,6 @@ namespace WinFormRow
     /// </summary>
     public partial class App : Application
     {
+        public static NBAEntities DB = new NBAEntities();
     }
 }
