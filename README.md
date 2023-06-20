@@ -1,5 +1,5 @@
 # Charts
-=======
+
 # Live charts
 
 ## Line chart
