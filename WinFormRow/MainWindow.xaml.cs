@@ -25,24 +25,29 @@ namespace WinFormRow
         {
             InitializeComponent();
             var areaMatchup = RowChart.ChartAreas.Add("MatchupArea");
+            areaMatchup.AxisY.Interval = 10;
             var seriaMatchupTeam1 = RowChart.Series.Add("matchupRow1");
             var seriaMatchupTeam2 = RowChart.Series.Add("matchupRow2");
             seriaMatchupTeam1.ChartType = SeriesChartType.Bar;
             seriaMatchupTeam2.ChartType = SeriesChartType.Bar;
             var matchups = App.DB.Matchup.Where(m => m.SeasonId == 1 && m.MatchupTypeId == 201).ToList();
-            var valueTeam1 = new List<int>();
-            var valueTeam2 = new List<int>();
-            var team = new List<string>();
-            var team1 = new List<string>();
+            var chartDataTeam1 = new List<ChartData>();
+            var chartDataTeam2 = new List<ChartData>();
+
             foreach (var matchup in matchups)
             {
-                valueTeam1.Add(matchup.Team_Away_Score);
-                valueTeam2.Add(matchup.Team_Home_Score);
-                team.Add(matchup.Team.TeamName);
-                team1.Add(matchup.Team1.TeamName);
+                chartDataTeam1.Add(new ChartData() { points = matchup.Team_Away_Score, Title = $"{matchup.Team.TeamName}-{matchup.Team1.TeamName}"});
+                chartDataTeam2.Add(new ChartData() { points = matchup.Team_Home_Score, Title = $"{matchup.Team.TeamName}-{matchup.Team1.TeamName}"});
+
             }
-            seriaMatchupTeam1.Points.DataBindXY(team,valueTeam1);
-            seriaMatchupTeam2.Points.DataBindXY(team1,valueTeam2);
+            seriaMatchupTeam1.Points.DataBindXY(chartDataTeam1.Select(s => s.Title).ToList(), chartDataTeam1.Select(s => s.points).ToList());
+            seriaMatchupTeam2.Points.DataBindXY(chartDataTeam2.Select(s => s.Title).ToList(), chartDataTeam2.Select(s => s.points).ToList());
+        }
+
+        private class ChartData
+        {
+            public string Title { get; set; }
+            public int points { get; set; }
         }
     }
 }
